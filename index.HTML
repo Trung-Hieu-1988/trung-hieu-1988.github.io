@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trung Tâm Hiếu Học</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        header {
+            background-color: #fff;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+            color: #4CAF50;
+            text-transform: uppercase; /* Đảm bảo viết hoa */
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            height: 60px;
+            margin-right: 15px;
+        }
+        nav {
+            background-color: #4CAF50;
+            padding: 15px 0;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        nav ul li {
+            margin: 0 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        nav ul li a:hover, nav ul li a.active {
+            background-color: #388E3C;
+        }
+        .breadcrumb {
+            padding: 15px 0;
+            color: #666;
+            font-size: 14px;
+        }
+        .main-content {
+            display: flex;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .courses-section {
+            flex: 2;
+            min-width: 300px;
+        }
+        .courses-section h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .course-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .course-card:hover {
+            transform: translateY(-5px);
+        }
+        .course-header {
+            height: 6px;
+        }
+        .course-header.orange { background: #FF9800; }
+        .course-header.yellow { background: #FFC107; }
+        .course-header.green { background: #4CAF50; }
+        .course-header.blue { background: #2196F3; }
+        .course-header.purple { background: #9C27B0; }
+        .course-header.red { background: #F44336; }
+        .course-body {
+            padding: 20px;
+        }
+        .course-body h3 {
+            margin: 0 0 10px;
+            font-size: 18px;
+        }
+        .course-body p {
+            margin: 0;
+            color: #666;
+            font-size: 14px;
+        }
+        .login-section {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            height: fit-content;
+        }
+        .login-section h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 22px;
+        }
+        .login-form input[type="text"],
+        .login-form input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .login-form label {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        .login-form a {
+            color: #4CAF50;
+            text-decoration: none;
+            margin-left: auto;
+        }
+        .btn-login {
+            background: #4CAF50;
+            color: white;
+            padding: 12px;
+            border: none;
+            width: 100%;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .btn-parent {
+            background: #FF9800;
+            color: white;
+            padding: 12px;
+            border: none;
+            width: 100%;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        @media (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+            }
+            nav ul {
+                flex-direction: column;
+            }
+            nav ul li {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <!-- Biểu tượng quyển sách mở màu xanh lá giống ảnh gốc -->
+                <img src="https://via.placeholder.com/60x60/4CAF50/FFFFFF?text=📖" alt="Logo Trung Tâm Hiếu Học">
+                TRUNG TÂM HIẾU HỌC . COM
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Giới thiệu</a></li>
+                <li><a href="#" class="active">Khóa học</a></li>
+                <li><a href="#">Giáo viên</a></li>
+                <li><a href="#">Hướng dẫn đăng ký học</a></li>
+                <li><a href="#">Báo chí nói về chúng tôi</a></li>
+                <li><a href="#">Góc phụ huynh</a></li>
+                <li><a href="#">Liên hệ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="breadcrumb">
+            Trang chủ > Khóa học
+        </div>
+
+        <div class="main-content">
+            <div class="courses-section">
+                <h2>KHÓA HỌC</h2>
+                <div class="courses-grid">
+                    <div class="course-card">
+                        <div class="course-header orange"></div>
+                        <div class="course-body">
+                            <h3>Toán lớp 3</h3>
+                            <p>Khai giảng:</p>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-header yellow"></div>
+                        <div class="course-body">
+                            <h3>Toán lớp 4</h3>
+                            <p>Khai giảng:</p>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-header orange"></div>
+                        <div class="course-body">
+                            <h3>Toán lớp 5</h3>
+                            <p>Khai giảng:</p>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-header green"></div>
+                        <div class="course-body">
+                            <h3>Toán lớp 6</h3>
+                            <p>Khai giảng:</p>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-header blue"></div>
+                        <div class="course-body">
+                            <h3>Toán Lớp 7</h3>
+                            <p>Khai giảng:</p>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-header purple"></div>
+                        <div class="course-body">
+                            <h3>Toán Lớp 8</h3>
+                            <p>Khai giảng:</p>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-header red"></div>
+                        <div class="course-body">
+                            <h3>Toán Lớp 9</h3>
+                            <p>Khai giảng:</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="login-section">
+                <h2>Đăng Nhập</h2>
+                <form class="login-form">
+                    <input type="text" placeholder="Tên đăng nhập">
+                    <input type="password" placeholder="Mật khẩu">
+                    <label>
+                        <input type="checkbox"> Ghi nhớ
+                        <a href="#">Quên mật khẩu</a>
+                    </label>
+                    <button type="submit" class="btn-login">ĐĂNG NHẬP</button>
+                    <button type="button" class="btn-parent">GÓC PHỤ HUYNH</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
